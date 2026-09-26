@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEditIngredientActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Ingredient"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingredient name"
+            android:inputType="textCapSentences"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/quantityEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantity"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/unitEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Unit (e.g. g, ml, unit)"
+            android:inputType="text"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/expiryDateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Expiry date (optional)"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/saveIngredientButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Ingredient"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+
+    </LinearLayout>
+
+</ScrollView>
