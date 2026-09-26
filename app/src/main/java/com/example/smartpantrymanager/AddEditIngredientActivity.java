@@ -64,9 +64,11 @@ public class AddEditIngredientActivity extends AppCompatActivity {
 
             if (item.getId() == ingredientId) {
                 nameEditText.setText(item.getName());
+
                 quantityEditText.setText(
                         String.valueOf(item.getQuantity())
                 );
+
                 unitEditText.setText(item.getUnit());
 
                 if (item.getExpiryDate() != null) {
@@ -130,6 +132,14 @@ public class AddEditIngredientActivity extends AppCompatActivity {
             return;
         }
 
+        if (name.length() > 50) {
+            nameEditText.setError(
+                    "Ingredient name must be 50 characters or less"
+            );
+            nameEditText.requestFocus();
+            return;
+        }
+
         if (quantityText.isEmpty()) {
             quantityEditText.setError("Enter a quantity");
             quantityEditText.requestFocus();
@@ -142,12 +152,26 @@ public class AddEditIngredientActivity extends AppCompatActivity {
             return;
         }
 
+        if (unit.length() > 20) {
+            unitEditText.setError(
+                    "Unit must be 20 characters or less"
+            );
+            unitEditText.requestFocus();
+            return;
+        }
+
         double quantity;
 
         try {
             quantity = Double.parseDouble(quantityText);
         } catch (NumberFormatException e) {
             quantityEditText.setError("Enter a valid number");
+            quantityEditText.requestFocus();
+            return;
+        }
+
+        if (Double.isNaN(quantity) || Double.isInfinite(quantity)) {
+            quantityEditText.setError("Enter a valid quantity");
             quantityEditText.requestFocus();
             return;
         }
