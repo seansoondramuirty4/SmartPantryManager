@@ -24,6 +24,15 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="12dp" />
+    <TextView
+        android:id="@+id/emptyPantryTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your pantry is empty. Tap Add Ingredient to get started!"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:visibility="gone" />
     <Button
         android:id="@+id/viewRecipesButton"
         android:layout_width="match_parent"
