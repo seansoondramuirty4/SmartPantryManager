@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private PantryAdapter pantryAdapter;
     private DatabaseHelper databaseHelper;
     private TextView emptyPantryTextView;
+    private TextView pantryCountTextView;
 
     private final List<PantryItem> pantryItems = new ArrayList<>();
 
@@ -29,8 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
         pantryRecyclerView =
                 findViewById(R.id.pantryRecyclerView);
+
         emptyPantryTextView =
                 findViewById(R.id.emptyPantryTextView);
+
+        pantryCountTextView =
+                findViewById(R.id.pantryCountTextView);
 
         Button addIngredientButton =
                 findViewById(R.id.addIngredientButton);
@@ -81,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
             startActivity(intent);
         });
+
         settingsButton.setOnClickListener(v -> {
             Intent intent = new Intent(
                     MainActivity.this,
@@ -105,9 +111,26 @@ public class MainActivity extends AppCompatActivity {
         pantryAdapter.updateItems(items);
 
         if (items.isEmpty()) {
+
+            pantryCountTextView.setVisibility(View.GONE);
             emptyPantryTextView.setVisibility(View.VISIBLE);
+
         } else {
+
             emptyPantryTextView.setVisibility(View.GONE);
+            pantryCountTextView.setVisibility(View.VISIBLE);
+
+            String ingredientWord =
+                    items.size() == 1
+                            ? "ingredient"
+                            : "ingredients";
+
+            pantryCountTextView.setText(
+                    items.size()
+                            + " "
+                            + ingredientWord
+                            + " in your pantry"
+            );
         }
     }
 }

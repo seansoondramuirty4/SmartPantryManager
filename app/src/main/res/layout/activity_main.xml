@@ -23,7 +23,19 @@
         android:text="Your Pantry"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/pantryCountTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="14sp"
+        android:gravity="center"
+        android:padding="6dp"
+        android:visibility="gone"
+        android:layout_marginBottom="4dp" />
+
     <TextView
         android:id="@+id/emptyPantryTextView"
         android:layout_width="match_parent"
@@ -33,18 +45,21 @@
         android:gravity="center"
         android:padding="12dp"
         android:visibility="gone" />
+
     <Button
         android:id="@+id/viewRecipesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View Recipes"
         android:layout_marginTop="8dp" />
+
     <Button
         android:id="@+id/suggestedRecipesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Suggested Recipes"
         android:layout_marginTop="8dp" />
+
     <Button
         android:id="@+id/settingsButton"
         android:layout_width="match_parent"
@@ -67,4 +82,3 @@
         android:layout_marginTop="12dp" />
 
 </LinearLayout>
-
