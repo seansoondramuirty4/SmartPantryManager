@@ -125,6 +125,17 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         String expiryDate = expiryDateEditText.getText()
                 .toString()
                 .trim();
+        if (!expiryDate.isEmpty()) {
+            try {
+                java.time.LocalDate.parse(expiryDate);
+            } catch (java.time.format.DateTimeParseException e) {
+                expiryDateEditText.setError(
+                        "Enter a valid expiry date"
+                );
+                expiryDateEditText.requestFocus();
+                return;
+            }
+        }
 
         if (name.isEmpty()) {
             nameEditText.setError("Enter an ingredient name");
