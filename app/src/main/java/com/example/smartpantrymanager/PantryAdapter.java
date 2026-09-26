@@ -92,8 +92,14 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
                                 );
 
                         if (result > 0) {
-                            pantryItems.remove(holder.getAdapterPosition());
-                            notifyItemRemoved(holder.getAdapterPosition());
+
+                            int adapterPosition =
+                                    holder.getBindingAdapterPosition();
+
+                            if (adapterPosition != RecyclerView.NO_POSITION) {
+                                pantryItems.remove(adapterPosition);
+                                notifyItemRemoved(adapterPosition);
+                            }
 
                             Toast.makeText(
                                     v.getContext(),
