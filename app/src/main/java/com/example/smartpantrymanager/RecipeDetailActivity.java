@@ -87,8 +87,14 @@ public class RecipeDetailActivity extends AppCompatActivity {
                     .append("\n");
         }
 
-        ingredientsTextView.setText(
-                ingredientText.toString()
-        );
+        if (ingredients.isEmpty()) {
+            ingredientsTextView.setText(
+                    "No ingredients listed for this recipe."
+            );
+        } else {
+            ingredientsTextView.setText(
+                    ingredientText.toString()
+            );
+        }
     }
 }
