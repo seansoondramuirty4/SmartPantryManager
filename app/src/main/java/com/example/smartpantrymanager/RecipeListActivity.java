@@ -1,6 +1,8 @@
 package com.example.smartpantrymanager;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +16,7 @@ public class RecipeListActivity extends AppCompatActivity {
     private RecyclerView recipeRecyclerView;
     private RecipeAdapter recipeAdapter;
     private DatabaseHelper databaseHelper;
+    private TextView emptyRecipesTextView;
 
     private final List<Recipe> recipes = new ArrayList<>();
 
@@ -24,6 +27,9 @@ public class RecipeListActivity extends AppCompatActivity {
 
         recipeRecyclerView =
                 findViewById(R.id.recipeRecyclerView);
+
+        emptyRecipesTextView =
+                findViewById(R.id.emptyRecipesTextView);
 
         databaseHelper = new DatabaseHelper(this);
 
@@ -44,5 +50,11 @@ public class RecipeListActivity extends AppCompatActivity {
                 databaseHelper.getAllRecipes();
 
         recipeAdapter.updateRecipes(allRecipes);
+
+        if (allRecipes.isEmpty()) {
+            emptyRecipesTextView.setVisibility(View.VISIBLE);
+        } else {
+            emptyRecipesTextView.setVisibility(View.GONE);
+        }
     }
 }
