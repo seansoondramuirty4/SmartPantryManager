@@ -14,6 +14,7 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
 
     private RecyclerView suggestedRecipesRecyclerView;
     private TextView noMatchesTextView;
+    private TextView matchCountTextView;
 
     private RecipeAdapter recipeAdapter;
     private DatabaseHelper databaseHelper;
@@ -31,6 +32,9 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
 
         noMatchesTextView =
                 findViewById(R.id.noMatchesTextView);
+
+        matchCountTextView =
+                findViewById(R.id.matchCountTextView);
 
         databaseHelper =
                 new DatabaseHelper(this);
@@ -86,6 +90,10 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
 
         if (matchingRecipes.isEmpty()) {
 
+            matchCountTextView.setVisibility(
+                    TextView.GONE
+            );
+
             noMatchesTextView.setVisibility(
                     TextView.VISIBLE
             );
@@ -101,6 +109,22 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
 
             noMatchesTextView.setVisibility(
                     TextView.GONE
+            );
+
+            matchCountTextView.setVisibility(
+                    TextView.VISIBLE
+            );
+
+            String recipeWord =
+                    matchingRecipes.size() == 1
+                            ? "recipe"
+                            : "recipes";
+
+            matchCountTextView.setText(
+                    matchingRecipes.size()
+                            + " "
+                            + recipeWord
+                            + " available with your pantry"
             );
         }
     }

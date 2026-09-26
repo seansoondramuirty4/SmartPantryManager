@@ -15,6 +15,17 @@
         android:layout_marginBottom="12dp" />
 
     <TextView
+        android:id="@+id/matchCountTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
         android:id="@+id/noMatchesTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
