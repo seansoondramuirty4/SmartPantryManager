@@ -41,6 +41,24 @@
             android:padding="12dp"
             android:layout_marginBottom="24dp" />
 
+        <!-- Theme Settings -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Theme Settings"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Switch
+            android:id="@+id/darkModeSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dark Mode"
+            android:textSize="17sp"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

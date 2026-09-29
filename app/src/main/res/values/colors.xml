@@ -2,4 +2,21 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Smart Pantry Manager colours -->
+    <color name="primary">#4CAF50</color>
+    <color name="primary_dark">#388E3C</color>
+    <color name="primary_light">#C8E6C9</color>
+
+    <color name="background_light">#F5F7F5</color>
+    <color name="background_dark">#121212</color>
+
+    <color name="surface_light">#FFFFFFFF</color>
+    <color name="surface_dark">#1E1E1E</color>
+
+    <color name="text_primary_light">#212121</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+
+    <color name="text_secondary_light">#616161</color>
+    <color name="text_secondary_dark">#BDBDBD</color>
 </resources>
